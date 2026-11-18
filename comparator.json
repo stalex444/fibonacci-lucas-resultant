@@ -1,0 +1,15 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "FibonacciLucasResultant.resultant_closed_form",
+    "FibonacciLucasResultant.fibonacci_remainder",
+    "FibonacciLucasResultant.lucas_norm_and_minimum"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

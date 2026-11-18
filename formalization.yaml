@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+project:
+  name: "The Fibonacci remainder and Lucas norm of the product resultant for xⁿ − x − 1"
+  description: >-
+    Let Rₙ(t) be the resultant in x of x² − x − 1 and tⁿ − txⁿ⁻¹ − xⁿ.
+    For every n ≥ 3, we compute Rₙ(t) explicitly in ℤ[t], prove that its remainder
+    modulo t² − t − 1 is (−F₂ₙ + (−1)ⁿ⁺¹)t − F₂ₙ₋₁, and identify the algebra norm
+    of its residue in ℤ[φ] as (−1)ⁿ⁺¹L₂ₙ₋₁. The absolute norm is at least 11, with
+    equality exactly when n = 3. This formalizes Stephanie Alexander’s Theorem 2
+    for the product resultant and derives the sharp minimum.
+  authors: ["Stephanie Alexander"]
+  responsible_maintainers: ["Stephanie Alexander"]
+  license: "MIT"
+classification:
+  arxiv: ["math.NT"]
+  msc2020: ["11B39", "11C08"]
+sources:
+  - title: "A Fibonacci–Lucas Spectral Law for the Trinomials xⁿ = x + 1"
+    authors: ["Stephanie Alexander"]
+    type: "paper"
+    id: "https://doi.org/10.5281/zenodo.18817597"
+    location: "Equation (2), Theorem 2 and its proof, Definition 1 and Table 1"
+    relationship: "formalizes"
+    author_endorsement: "participated"
+    note: "The primary mathematical source, a preprint by the maintainer. The sharp absolute minimum is deduced from the signed norm identity."
+  - title: "Degree n Relatives of the Golden Ratio and Resultants of the Corresponding Polynomials"
+    authors: ["David E. Rush"]
+    type: "paper"
+    id: "https://www.mathstat.dal.ca/FQ/Papers1/50-4/Rush.pdf"
+    location: "Fibonacci Quarterly 50 (2012), Proposition 3.4"
+    relationship: "background"
+    note: "Rush obtains the same absolute Lucas values for odd shifts in ordinary Selmer resultants. The present theorem retains the linear remainder of the multiplicative product resultant."
+  - title: "Irreducibles and the composed product for polynomials over a finite field"
+    authors: ["J. V. Brawley", "L. Carlitz"]
+    type: "paper"
+    id: "https://doi.org/10.1016/0012-365X(87)90135-X"
+    relationship: "background"
+    note: "The multiplicative composed product forms a polynomial from pairwise products of roots. Their setting is finite fields."
+related_formalizations:
+  - id: "https://github.com/stalex444/golden-family-boundary/tree/fc43a62561b4d7846ca25273229a4f964dff7ae5"
+    relationship: "other"
+    note: "PALOMAR-2026-09-01-000012 treats roots of individual trinomials for general n."
+  - id: "https://github.com/stalex444/mahler-minimizer-compositum/tree/84b364a5f98daefc1be387ae0aeb3d39866eca79"
+    relationship: "other"
+    note: "PALOMAR-2026-09-01-000005 v2 gives certificates for the fixed cubic–quartic product ρQ."
+  - id: "https://github.com/leanprover-community/mathlib4/tree/065356127b1dc0016f66b7283ce0ce2c4055aa55"
+    relationship: "builds-on"
+    note: "Resultants, monic polynomial division, AdjoinRoot, algebra norms, and Fibonacci numbers."
+status:
+  scope: "The m = 2 product-resultant row, for every n ≥ 3. The minimum is taken along this entire row."
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+fidelity:
+  divergences: >-
+    The source also describes the resultant as the minimal polynomial of a product.
+    These statements use the resultant from equation (2). Equality with the minimal
+    polynomial requires irreducibility. The lower bound and its equality case are
+    consequences of Theorem 2.
+automation:
+  methods:
+    - method: "agent"
+      models: ["Anthropic Claude"]
+      framework: "Claude Code"
+      tool_setup: "Author-directed development of the underlying Lean proofs."
+    - method: "agent"
+      models: ["OpenAI Codex"]
+      framework: "Codex"
+      tool_setup: "Prepared stand-alone public statements, assembled the proof package, and checked source alignment."
+review:
+  status: "self-assessed"
+  notes: "Author-directed formalization with AI-assisted review. The reproduction commands and declarations are listed in README.md."
