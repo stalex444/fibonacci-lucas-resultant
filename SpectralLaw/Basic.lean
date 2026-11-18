@@ -7,6 +7,8 @@ public import SpectralLaw.Defs
 # SpectralLaw.Basic — `ℤ[φ] = ℤ[t]/(t² − t − 1)`, and Definition 1 is its field norm
 
 The quadratic norm of a linear residue a·φ + b is −a² + ab + b².
+The norm and residue lemmas were ported from Stephanie Alexander’s earlier
+`PdtGoldenResidue.lean` (revision `813b46e265560ff397e365cbd8486e603298a96d`).
 -/
 
 @[expose] public section

@@ -38,6 +38,12 @@ sources:
     relationship: "background"
     note: "The multiplicative composed product forms a polynomial from pairwise products of roots. Their setting is finite fields."
 related_formalizations:
+  - id: "Stephanie Alexander, PdtGoldenResidue.lean, revision 813b46e265560ff397e365cbd8486e603298a96d"
+    relationship: "builds-on"
+    note: "Private predecessor certifying the finite n = 3 through 8 row. The quadratic algebra-norm bridge is ported into SpectralLaw/Basic.lean."
+  - id: "Stephanie Alexander, SpectralLawPkg, revision e8771930171fbccef76fdf9cfd9a4d51d78fc184"
+    relationship: "adapts"
+    note: "Private November 17, 2026 implementation of the general-n proof. This stand-alone release includes its six supporting modules, with edited documentation and new public statements in terms of the resultant."
   - id: "https://github.com/stalex444/golden-family-boundary/tree/fc43a62561b4d7846ca25273229a4f964dff7ae5"
     relationship: "other"
     note: "PALOMAR-2026-09-01-000012 treats roots of individual trinomials for general n."
@@ -63,7 +69,7 @@ automation:
     - method: "agent"
       models: ["Anthropic Claude"]
       framework: "Claude Code"
-      tool_setup: "Author-directed development of the underlying Lean proofs."
+      tool_setup: "Author-directed development of the underlying general-n proofs in SpectralLawPkg, reusing quadratic norm lemmas from PdtGoldenResidue.lean."
     - method: "agent"
       models: ["OpenAI Codex"]
       framework: "Codex"

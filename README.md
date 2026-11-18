@@ -38,6 +38,10 @@ The construction taking products of roots is the multiplicative composed product
 
 Two earlier Palomars by Alexander concern the same trinomial family. *The golden family's boundary at n = 3* establishes results about its individual roots rₙ. *The compositum of the two Mahler minimizers* treats the fixed product of the degree-three and degree-four roots, ρQ. This entry examines the products of the degree-two roots with the roots of every degree n ≥ 3. [Golden Family Boundary](https://palomar-registry.org/entry?id=PALOMAR-2026-09-01-000012&version=1) · [Compositum, version 2](https://palomar-registry.org/entry?id=PALOMAR-2026-09-01-000005&version=2)
 
+## Formalization history
+
+Alexander’s earlier Lean file `PdtGoldenResidue.lean` (revision `813b46e265560ff397e365cbd8486e603298a96d`) certified the finite row n = 3 through 8 and identified the quadratic coefficient formula with the algebra norm. Her November 17, 2026 package `SpectralLawPkg` (revision `e8771930171fbccef76fdf9cfd9a4d51d78fc184`) ported the quadratic norm lemmas and established the product-resultant identities for every n ≥ 3. Both predecessors were developed in her private research repository. This standalone release includes the six supporting proof modules and presents the three public challenge statements directly in terms of Mathlib’s resultant.
+
 ## Verification
 
 The [challenge](Challenge.lean) defines the resultant using Mathlib, the quotient ring using its modulus, and the Lucas numbers by recurrence. Each [solution](Solution.lean) is checked against the statement of the same name.
